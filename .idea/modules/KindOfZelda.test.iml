@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module version="4">
-  <component name="McpModuleSettings">
-    <option name="mappingFile" value="C:\Users\basil\Desktop\MODDING STUDIO\MODS\KindOfZelda\build\createMcpToSrg\output.tsrg" />
-    <option name="mcpVersion" value="snapshot_20200514-1.16" />
-    <option name="minecraftVersion" value="1.16.2" />
-    <option name="srgType" value="TSRG" />
-  </component>
-</module>
