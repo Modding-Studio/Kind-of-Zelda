@@ -1,2 +1,3 @@
-# koz
-Kind of Zelda
+# Kind of Zelda
+
+Ajoute des races
