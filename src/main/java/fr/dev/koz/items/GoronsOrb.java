@@ -7,6 +7,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
+import net.minecraft.world.item.Item.Properties;
+
 public class GoronsOrb extends Orb {
 
     public GoronsOrb(Properties properties) {

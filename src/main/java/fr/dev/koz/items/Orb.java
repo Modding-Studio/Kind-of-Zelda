@@ -2,13 +2,15 @@ package fr.dev.koz.items;
 
 
 import fr.dev.koz.capabilities.TestCapability;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.level.Level;
 
+
+import net.minecraft.world.item.Item.Properties;
 
 public class Orb extends Item {
 
@@ -19,9 +21,9 @@ public class Orb extends Item {
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
 
-        ItemStack stack = playerIn.getHeldItem(handIn);
+        ItemStack stack = playerIn.getItemInHand(handIn);
         if (stack.getItem() instanceof Orb) {
             if (playerIn.getCapability(TestCapability.TEST_CAPABILITY).isPresent() == true) {
                 playerIn.getCapability(TestCapability.TEST_CAPABILITY).ifPresent(cap -> {
@@ -34,7 +36,7 @@ public class Orb extends Item {
                 });
             }
         }
-        return super.onItemRightClick(worldIn, playerIn, handIn);
+        return super.use(worldIn, playerIn, handIn);
     }
 }
 
