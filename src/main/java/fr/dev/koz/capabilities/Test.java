@@ -1,8 +1,8 @@
 package fr.dev.koz.capabilities;
 
 
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 
 public class Test implements ITest
 {
@@ -17,16 +17,16 @@ public class Test implements ITest
 
     private int race = 0;
 
-    private final float max_health = 20.0f;  //field_233818_a_
-    private final float knockback_resistance = 0.0f;  //field_233820_c_
-    private final float movement_speed = 0.1f;  //field_233821_d_
-    private final float flying_speed = 0.1f;  //field_233822_e_
-    private final float attack_damage = 1.0f;  //field_233823_f_
-    private final float attack_knockback = 0.0f;  //field_233824_g_
-    private final float attack_speed = 1.0f;  //field_233825_h_
-    private final float armor = 0.0f;  //field_233826_i_
-    private final float armor_toughness = 0.0f;  //field_233827_j_
-    private final float luck = 0.0f;  //field_233828_k_
+    private final float max_health = 20.0f;  //MAX_HEALTH
+    private final float knockback_resistance = 0.0f;  //KNOCKBACK_RESISTANCE
+    private final float movement_speed = 0.1f;  //MOVEMENT_SPEED
+    private final float flying_speed = 0.1f;  //FLYING_SPEED
+    private final float attack_damage = 1.0f;  //ATTACK_DAMAGE
+    private final float attack_knockback = 0.0f;  //ATTACK_KNOCKBACK
+    private final float attack_speed = 1.0f;  //ATTACK_SPEED
+    private final float armor = 0.0f;  //ARMOR
+    private final float armor_toughness = 0.0f;  //ARMOR_TOUGHNESS
+    private final float luck = 0.0f;  //LUCK
 
     @Override
     public int getValue() {
@@ -39,26 +39,26 @@ public class Test implements ITest
     }
 
     @Override
-    public void resetStats(PlayerEntity playerIn) {
+    public void resetStats(Player playerIn) {
         setStats(playerIn , 0f, 0f, 1f, 1f, 0f, 0f, 1f, 0f, 0f, 0f);
     }
 
     @Override
-    public void setStats(PlayerEntity playerIn, float lMaxHealth, float lKnockbackRes, float lMoveSpeed, float lFlySpeed, float lAttackDamage, float lAttackKnockback, float lAttackSpeed, float lArmor, float lToughness, float lLuck) {
-        playerIn.getAttribute(Attributes.field_233818_a_).setBaseValue(max_health + lMaxHealth);
-        playerIn.getAttribute(Attributes.field_233820_c_).setBaseValue(knockback_resistance + lKnockbackRes);
-        playerIn.getAttribute(Attributes.field_233821_d_).setBaseValue(movement_speed * lMoveSpeed);
-        //playerIn.getAttribute(Attributes.field_233822_e_).setBaseValue(flying_speed * lFlySpeed);
-        playerIn.getAttribute(Attributes.field_233823_f_).setBaseValue(attack_damage + lAttackDamage);
-        //playerIn.getAttribute(Attributes.field_233824_g_).setBaseValue(attack_knockback + lAttackKnockback);
-        playerIn.getAttribute(Attributes.field_233825_h_).setBaseValue(attack_speed * lAttackSpeed);
-        playerIn.getAttribute(Attributes.field_233826_i_).setBaseValue(armor + lArmor);
-        playerIn.getAttribute(Attributes.field_233827_j_).setBaseValue(armor_toughness + lToughness);
-        playerIn.getAttribute(Attributes.field_233828_k_).setBaseValue(luck + lLuck);
+    public void setStats(Player playerIn, float lMaxHealth, float lKnockbackRes, float lMoveSpeed, float lFlySpeed, float lAttackDamage, float lAttackKnockback, float lAttackSpeed, float lArmor, float lToughness, float lLuck) {
+        playerIn.getAttribute(Attributes.MAX_HEALTH).setBaseValue(max_health + lMaxHealth);
+        playerIn.getAttribute(Attributes.KNOCKBACK_RESISTANCE).setBaseValue(knockback_resistance + lKnockbackRes);
+        playerIn.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(movement_speed * lMoveSpeed);
+        //playerIn.getAttribute(Attributes.FLYING_SPEED).setBaseValue(flying_speed * lFlySpeed);
+        playerIn.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(attack_damage + lAttackDamage);
+        //playerIn.getAttribute(Attributes.ATTACK_KNOCKBACK).setBaseValue(attack_knockback + lAttackKnockback);
+        playerIn.getAttribute(Attributes.ATTACK_SPEED).setBaseValue(attack_speed * lAttackSpeed);
+        playerIn.getAttribute(Attributes.ARMOR).setBaseValue(armor + lArmor);
+        playerIn.getAttribute(Attributes.ARMOR_TOUGHNESS).setBaseValue(armor_toughness + lToughness);
+        playerIn.getAttribute(Attributes.LUCK).setBaseValue(luck + lLuck);
     }
 
     @Override
-    public void specialities(PlayerEntity playerIn) {
+    public void specialities(Player playerIn) {
         if(this.race == 1) {  //Humans
             resetStats(playerIn);
         }

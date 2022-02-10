@@ -1,7 +1,7 @@
 package fr.dev.koz.capabilities;
 
-import net.minecraft.nbt.IntNBT;
-import net.minecraft.util.Direction;
+import net.minecraft.nbt.IntTag;
+import net.minecraft.core.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.CapabilityManager;
@@ -11,7 +11,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class TestCapability  implements ICapabilitySerializable<IntNBT> {
+public class TestCapability  implements ICapabilitySerializable<IntTag> {
     @CapabilityInject(ITest.class)
     public static final Capability<ITest> TEST_CAPABILITY = null;
     private LazyOptional<ITest> instance = LazyOptional.of(TEST_CAPABILITY::getDefaultInstance);
@@ -28,12 +28,12 @@ public class TestCapability  implements ICapabilitySerializable<IntNBT> {
     }
 
     @Override
-    public IntNBT serializeNBT() {
-        return (IntNBT) TEST_CAPABILITY.getStorage().writeNBT(TEST_CAPABILITY, instance.orElseThrow(() -> new IllegalArgumentException("LazyOptional cannot be empty!")), null);
+    public IntTag serializeNBT() {
+        return (IntTag) TEST_CAPABILITY.getStorage().writeNBT(TEST_CAPABILITY, instance.orElseThrow(() -> new IllegalArgumentException("LazyOptional cannot be empty!")), null);
     }
 
     @Override
-    public void deserializeNBT(IntNBT nbt) {
+    public void deserializeNBT(IntTag nbt) {
         TEST_CAPABILITY.getStorage().readNBT(TEST_CAPABILITY, instance.orElseThrow(() -> new IllegalArgumentException("LazyOptional cannot be empty!")), null, nbt);
     }
 }

@@ -2,8 +2,8 @@ package fr.dev.koz;
 
 import fr.dev.koz.capabilities.TestCapability;
 import fr.dev.koz.init.ModItems;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -35,9 +35,9 @@ public class KindOfZelda {
 
     }
 
-    public static final ItemGroup KOZ_ITEM_GROUP = new ItemGroup("KoZTab") {
+    public static final CreativeModeTab KOZ_ITEM_GROUP = new CreativeModeTab("KoZTab") {
         @Override
-        public ItemStack createIcon() {
+        public ItemStack makeIcon() {
             return new ItemStack(ModItems.ORB_OF_ORIGIN.get());
         }
     };
