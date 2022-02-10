@@ -1,7 +1,9 @@
 package fr.dev.koz.util;
 
 import fr.dev.koz.KindOfZelda;
+import fr.dev.koz.capabilities.ITest;
 import fr.dev.koz.capabilities.TestCapability;
+import fr.dev.koz.capabilities.TestProvider;
 import fr.dev.koz.init.ModItems;
 import fr.dev.koz.items.Orb;
 import fr.dev.koz.items.OrbOfOrigin;
@@ -9,6 +11,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
@@ -25,7 +28,7 @@ public class ForgeEvent
     public static void attachCapabilitiesEntity(final AttachCapabilitiesEvent<Entity> event)
     {
         if(event.getObject() instanceof Player)
-            event.addCapability(new ResourceLocation(KindOfZelda.MODID, "test"), new TestCapability());
+            event.addCapability(new ResourceLocation(KindOfZelda.MODID, "test"), new TestProvider());
     }
 
     @SubscribeEvent
@@ -65,6 +68,12 @@ public class ForgeEvent
             }
         }
     }*/
+
+    @SubscribeEvent
+    public static void registerCapabilities(RegisterCapabilitiesEvent event){
+        TestCapability.register(event);
+    }
+
 }
 
 

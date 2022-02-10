@@ -6,19 +6,9 @@ import fr.dev.koz.items.HumansOrb;
 import fr.dev.koz.items.OrbOfOrigin;
 import fr.dev.koz.items.ZorasOrb;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-
-        import fr.dev.koz.KindOfZelda;
-        import fr.dev.koz.items.GoronsOrb;
-        import fr.dev.koz.items.HumansOrb;
-        import fr.dev.koz.items.OrbOfOrigin;
-        import fr.dev.koz.items.ZorasOrb;
-        import net.minecraft.item.Item;
-        import net.minecraftforge.fml.RegistryObject;
-        import net.minecraftforge.registries.DeferredRegister;
-        import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
 
