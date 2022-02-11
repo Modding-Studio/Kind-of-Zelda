@@ -1,14 +1,5 @@
 package fr.dev.koz.items;
 
-import fr.dev.koz.capabilities.TestCapability;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
-
-import net.minecraft.world.item.Item.Properties;
-
 public class ZorasOrb extends Orb {
 
     public ZorasOrb(Properties properties) {

@@ -27,7 +27,7 @@ public class KindOfZelda {
 
     private void setup(FMLCommonSetupEvent e) {
 
-        TestCapability.register();
+
 
     }
 
